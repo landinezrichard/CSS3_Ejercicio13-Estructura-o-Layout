@@ -1,0 +1,374 @@
+/*
+	ESTILOS BÁSICOS DE LA PÁG.
+	_________________________
+*/
+
+/*Tamaño letra, interlineado(1.6em), tipo de letra.
+Color de letra.
+color de fondo e imagen.
+espacio entre cajas=0.
+espacio entre el contenido y el borde=0.
+*/
+
+
+body{	
+	font:70%/160% Verdana, Arial, Helvetica, sans-serif;	
+	color:#192666;	
+	background: #F2F5FE url(../imagenes/fondo.gif) repeat-x;	
+	margin:0;	
+	padding:0;
+}
+
+/*color para los enlaces*/
+a {
+  color:#192666;
+}
+a:hover {
+  color:#4F6AD7;
+}
+
+/*margenes para los h*/
+h1, h2, h3{
+  margin: 1em 0;
+  padding:0;
+}
+
+/*Tamaño, tipo de letra, y sin negrilla, para el titulo de la pág.*/
+h1 {
+  font-size: 260%;
+  font-family: "georgia", serif;
+  font-weight: normal;
+}
+
+/*Tamaño, tipo de letra, y sin negrilla, 
+para los titulos de los articulos*/
+
+h2 {
+  font-size:180%;
+  font-family: "georgia", serif;
+  font-weight:normal;
+}
+
+/*Tamaño, tipo de letra, y sin negrilla, 
+para los titulos de la segunda columna*/
+h3 {
+  font-size:120%;
+  font-weight:bold;
+}
+
+/*Margen para las listas*/
+ul{
+  margin: 1em 0 1em 2em;
+  padding:0;
+}
+
+/*
+	LAYOUT 
+	para que quede a dos columnas
+	_________________________
+*/
+
+/*Tamaño fijo de la pág.
+margin auto en los laterales para centrar la pág.*/
+#contenedor{
+	width:770px;
+	margin: 50px auto 0 auto;
+}
+
+/*--------CABECERA---------*/
+
+/*La cabecera con la imagen de fondo y la altura.
+se posiciona de forma relativa, para despues poder con top y left acomodar sus 
+contenidos(logo empresa/barra del buscador)*/
+
+#cabecera{
+	width:770px;
+	height:100px;
+	background:#233C9B url(../imagenes/cabecera.jpg) no-repeat;
+	padding:0;
+	margin:0;
+	position: relative;
+}
+
+/*El margen:0, sirve para que no tengan espacio entre las cajas y se ajuste bien el 
+titulo de la pág.*/
+#cabecera #logo{
+	position:absolute;
+	top:35px;
+	left:35px;
+	margin:0;
+}
+
+#cabecera #logo a{
+	color:white;
+	display:block;
+	line-height:35px;
+	/*float:left;*/
+}
+
+#cabecera #buscador{	
+	/*float:right;	*/
+	position: absolute;
+	top: 40px;
+	right: 20px;
+}
+
+/*Quitamos el tag <leyend> para que no se vea
+y al no verse se sube un poco el campo del buscador*/
+#cabecera #buscador legend {
+  display: none;
+}
+/*quitamos el borde que coloca el fieldset
+al no verse, tambien hace que se suba un poco en posicion el campo del buscador*/
+#cabecera #buscador fieldset {
+  border: none;
+}
+
+/*--------FIN CABECERA---------*/
+
+/*--------LAYOUT 2 COLUMNAS---------*/
+
+/*Fondo blanco para el contenido (las 2 columnas)
+reducimos su tamaño -10px, para poner margenes de 5px a cada lado*/
+#contenido{
+	width:760px;
+	background:white;
+	margin:0 5px;
+}
+
+/*Columna izq
+Margen arriba para separala del menu
+relleno a la izq, para separar los texto del borde
+*/
+#contenido #principal{
+	width:530px;
+	float:left;
+	margin-top: 15px;
+	padding-left:20px;
+}
+/*Columna der
+#CEDBF9 --> es el color de la columna
+el fondo es para la parte superior (esquina redondeada y un poco de degradado)
+*/
+#contenido #secundario{
+	width:200px;
+	float:left;
+	background:#CEDBF9 url(../imagenes/fondo_columna.gif) no-repeat;
+	margin-top: 15px;	
+}
+
+/*--------FIN LAYOUT 2 COLUMNAS---------*/
+
+/*--------MENÚ---------*/
+
+/*Margenes laterales de 5px, para que se ajuste con la cabecera
+padding superior, para separar el menu de la cabecera y se vea 
+mejor el efecto de que cada elemento del menu paresca una pestaña
+*/
+#menu {
+	background: #192666;
+	margin: 0 5px;
+	padding-top: 10px;
+	
+}
+
+/* Margenes laterales de 10px, para que se separen un poco de los bordes
+Se les quitan los puntos de lista, tal y como se hace para convertirlos en un menu horizontal
+*/
+#menu ul{	
+	list-style:none;
+	margin:0 10px;	
+	padding:0;
+	
+}
+
+/*Posicion float:left, para convertirlos en un menu horizontal
+los elementos li, se separan en el lado derecho 5px, para dar el efecto de que son pestañas.*/
+#menu ul li{
+	/*width:12%;*/
+	float:left;
+	margin-right:5px;	
+}
+
+/*Aca se les indica el color de fondo a cada enlace, para que se vean como pestañas.
+Se les da un color azul-blanco
+Se les quita la linea de abajo.*/
+#menu ul li a{
+	background: #253575;
+	color:#B5C4E3;
+	display:block;
+	padding:5px 15px;
+	text-decoration:none;
+	font-weight: bold;
+}
+
+#menu ul li a:hover{
+	background:#31479B;
+}
+
+#menu ul li.seleccionado a{
+	color:#FF9000;
+	background:white;
+}
+
+/*--------FIN MENÚ---------*/
+
+/*--------PIE DE PÁG.---------*/
+/*Se pone la altura (segun la imagen)
+se posiciona relative, para poder ubicar su contenido(<p>) con top y left de forma absoluta*/
+#pie{
+	/*clear:both;*/
+	height:60px;
+	background:url(../imagenes/fondo_pie.jpg) no-repeat;
+	color: #6685CC;
+	position: relative;
+	/*margin-bottom: 50px;*/
+}
+
+#pie p {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+}
+/*--------FIN PIE DE PÁG.---------*/
+/*Para poder separar el pie de pág. y las secciones flotantes*/
+.clear{
+	clear:both;	
+}
+
+/*--------ESTILOS ARTICULOS--------*/
+
+/*Se pone la imagen de fondo para cada articulo.
+El padding sirve para separar el contenido del borde, y que se vea mejor la imagen de fondo.*/
+#contenido .articulo{
+	background:url(../imagenes/fondo_articulo.jpg) no-repeat;
+	/*margin:0;*/
+	padding:20px;	
+}
+/*El margen=-20px, sirve para que el titulo de cada articulo se corra un poco a la izq.
+El padding ajusta el titulo con el fondo.*/
+#contenido .articulo h2{
+	background:#DEE5FD;
+	color: #192666;
+	margin:0 -20px;
+	padding:10px;
+}
+
+/*Se le pone un borde inferior a la seccion que viene con iconos.
+Se le indica el color azul claro a la fehca del articulo.
+El padding sirve para separar la linea(borde) de los textos.
+*/
+#contenido .info{
+	border-bottom:1px solid #DEE5FD;
+	color:#6685CC;
+	padding-bottom: 8px;
+	margin: 10px 0;
+}
+
+/*Se le aplica el color azul claro a los enlaces.*/
+#contenido .info a{ 
+	color:#6685CC; 
+}
+/*Color naranja cuando se pone el mouse encima*/
+#contenido .info a:hover{ 
+	color:#FF9000;
+}
+
+/*Se le pone la imagen correspondiente a cada enlace o texto.
+El padding izq. es para separar la imagen del texto.*/
+.fecha{
+	background:url(../imagenes/icono_fecha.gif) no-repeat left center;
+	padding-left:15px;	
+}
+
+.categoria{
+	background:url(../imagenes/icono_categoria.gif) no-repeat left center;
+	padding-left:15px;
+	margin-left:8px;
+}
+
+.autor{
+	background:url(../imagenes/icono_autor.gif) no-repeat left center;
+	padding-left:15px;
+	margin-left:8px;
+}
+
+.comentarios{
+	background:url(../imagenes/icono_comentarios.gif) no-repeat left center;
+	padding-left:15px;
+	margin-left:8px;
+}
+
+/*Relleno a los titulos(h3) de la 2da columna.
+el margen superior lo separa un poco de los demas h3.
+el color de fondo es un azul un poco mas oscuro para los titulos.*/
+#contenido #secundario h3 {
+	padding: 10px 0 10px 10px;
+	margin-top: 20px;
+	background: #A0B9F3;
+	color: #192666;
+}
+/*Para que el texto quede al lado de la imagen, posicionamos la imagen float:left.
+con los margenes la separamos del texto.*/
+#contenido #secundario #sobremi img {
+	float: left;
+	margin: 4px 5px 0 0;
+}
+/*A la seccion de la foto y los datos del autor se les da un relleno de 10px a los lados*/
+#contenido #secundario div {
+	padding: 0 10px;
+}
+
+/*Para los enlaces de categorias:*/
+
+/*eliminamos las viñetas de la lista.
+damos margen superior e inferior y quitamos los margenes laterales*/
+#contenido #secundario ul{
+	list-style:none;
+	margin: 15px 0;
+  /*padding: 0;*/  
+}
+
+/*se agrega un borde inferior a cada li, para que queden separados*/
+#contenido #secundario li {
+  /*margin: 0;
+  padding: 0;*/
+	border-bottom: 1px solid #E0E8FA;
+}
+
+/*Mostramos los enlaces como elementos de bloque.
+les agregamos un relleno para que cada enlace sea mas grande.
+ponemos como imagen de fondo el icono a la izquierda, ubicado a 8px(left)
+quitamos la linea de abajo de los enlaces
+*/
+#contenido #secundario li a {
+	display: block;
+	padding: 3px 0 3px 22px;
+	background: url("../imagenes/icono_elemento.gif") 8px no-repeat;
+	text-decoration: none;
+}
+
+/*El color de los enlaces cuando se pasa el mouse encima*/
+
+#contenido #secundario li a:hover {
+  background-color: #E0E8FA;
+  color: #192666;
+}
+/*Se cambia la imagen, la negrilla del texto y el color de fondo de los enlaces que
+tienen la clase seleccionado*/
+
+#contenido #secundario li.seleccionado a {
+  background: #E0E8FA url("../imagenes/icono_elemento_seleccionado.gif") 8px no-repeat;
+  font-weight: bold;
+}
+
+/*
+ul#categorias{
+	list-style-image:url(../imagenes/icono_categoria.gif);
+}
+
+ul#categorias li.seleccionado{
+	list-style-image:url(../imagenes/icono_elemento_seleccionado.gif);
+}*/
